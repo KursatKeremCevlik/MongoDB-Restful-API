@@ -1,5 +1,31 @@
-extends layout
-
-block content
-  h1= title
-  p Welcome to #{title}
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    title Document
+    script(src='http://localhost:3000/socket.io/socket.io.js')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js')
+    script
+      include index.js
+  body
+    form(id='KayıtForm')
+      input(type='text', id='İsim')
+      |  İsim 
+      br
+      input#Soyisim(type='text')
+      |  Soyisim 
+      br
+      input(type='number', id='Yaş')
+      |  Yaş 
+      br
+      input(type='number', id='Maaş')
+      |  Maaş 
+      br
+      input#Mesai(type='number')
+      |  Kaç gün çalışıyorsun (ayda) 
+      br
+      input#SicilNo(type='number')
+      |  Sicilno 
+      br
+      input(type='submit', id='')
