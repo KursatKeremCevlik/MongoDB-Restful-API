@@ -1,0 +1,51 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    title Document
+    script(src='http://localhost:3000/socket.io/socket.io.js')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js')
+    style
+      include style.css
+  body
+    form(id='KayıtForm')
+      input(type='text', id='İsim')
+      |  İsim 
+      br
+      input#Soyisim(type='text')
+      |  Soyisim 
+      br
+      input(type='number', id='Yaş')
+      |  Yaş 
+      br
+      input(type='number', id='Maaş')
+      |  Maaş (aylık) 
+      a.getHomePage(href='/') Ana sayfaya geri dön
+      br
+      input#Mesai(type='number')
+      |  Kaç gün çalışıyorsun (ayda) 
+      br
+      input#SicilNo(type='number')
+      |  Sicilno 
+      br
+      br
+      input#Username(type='text')
+      |  Kullanıcı adınız 
+      br
+      input#Password(type='password')
+      |  Şifreniz 
+      br
+      br
+      input(type='submit', id='')
+      br
+      br
+      .Surprise Kayıt olundu!
+      #one İsim girmediniz !
+      #two Soyisim girmediniz !
+      #tree Yaş girmediniz !
+      #four Maaş girmediniz !
+      #five Mesai girmediniz !
+      #six SicilNo girmediniz !
+      #seven Kullanıcı adı girmediniz !
+      #eight Şifre girmediniz !

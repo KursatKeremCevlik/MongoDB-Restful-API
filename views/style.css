@@ -1,0 +1,50 @@
+.Surprise{
+    display: none;
+}
+#one {
+    display: none;  
+}
+#two {
+    display: none;  
+}
+#tree {
+    display: none;  
+}
+#four {
+    display: none;  
+}
+#five {
+    display: none;  
+}
+#six {
+    display: none;  
+}
+#seven {
+    display: none;  
+}
+#eight {
+    display: none;  
+}
+
+.hero {
+    text-align: center;
+}
+.heroTitle {
+    font-size: 50px;
+}
+.link {
+    text-decoration: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: blue;
+}
+.links {
+    margin-top: 100px
+}
+
+.getHomePage {
+    margin-left: 230px;
+    text-decoration: none;
+    color: blue;
+    cursor: pointer;
+}

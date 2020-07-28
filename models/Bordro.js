@@ -2,11 +2,13 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const BordroSchema = new Schema({
-    isim: String,
-    soyisim: String,
-    yaş: Number,
-    maaş: Number,
-    mesai: Number,
+    name: String,
+    surname: String,
+    username: String,
+    password: String,
+    year: Number,
+    pay: Number,
+    overtime: Number,
     sicilNo: Number,
 });
 

@@ -12,11 +12,13 @@ io.on('connection', (socket) => {
 
   socket.on('variables', (data) => {
     const bordro = new Bordro({
-      isim: data.isim,
-      soyisim: data.soyisim,
-      yaş: data.yaş,
-      maaş: data.maaş,
-      mesai: data.mesai,
+      name: data.isim,
+      surname: data.soyisim,
+      username: data.username,
+      password: data.password,
+      year: data.yaş,
+      pay: data.maaş,
+      overtime: data.mesai,
       sicilNo: data.sicilNo
     });
 

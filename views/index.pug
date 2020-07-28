@@ -4,28 +4,12 @@ html(lang='en')
     meta(charset='UTF-8')
     meta(name='viewport', content='width=device-width, initial-scale=1.0')
     title Document
-    script(src='http://localhost:3000/socket.io/socket.io.js')
-    script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js')
-    script
-      include index.js
+    style
+      include style.css
   body
-    form(id='KayıtForm')
-      input(type='text', id='İsim')
-      |  İsim 
-      br
-      input#Soyisim(type='text')
-      |  Soyisim 
-      br
-      input(type='number', id='Yaş')
-      |  Yaş 
-      br
-      input(type='number', id='Maaş')
-      |  Maaş 
-      br
-      input#Mesai(type='number')
-      |  Kaç gün çalışıyorsun (ayda) 
-      br
-      input#SicilNo(type='number')
-      |  Sicilno 
-      br
-      input(type='submit', id='')
+    .hero
+      h1.heroTitle Çevlik ailesi genel veritabanı
+      .links
+        a.link(href='/Kayit') Kayıt ol
+        br
+        a.link(href='') Veritabanında sorgu yap
