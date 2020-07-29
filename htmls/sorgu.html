@@ -7,6 +7,16 @@
     <link rel="stylesheet" href="style.css">
     <script src="http://localhost:3000/socket.io/socket.io.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <style>
+        .container{
+            display: none;
+            margin-top: 64px;
+            margin-left: 70px;
+        }
+        .error{
+            display: none;
+        }
+    </style>
     <script>
         $(() => {
             const socket = io.connect('http://localhost:3000');
@@ -24,24 +34,44 @@
                 if(Username.value === ''){
                     $('.Error').show();
                     $('.Error-1').hide();
+                    $('.error').hide();
+                    $('.container').hide();
                 }else{
                     if(Password.value === ''){
                         $('.Error-1').show();
                         $('.Error').hide();
+                        $('.error').hide();
+                        $('.container').hide();
                     }else{
-                        socket.emit('FIND', { username, password });
-                        Username.value = '';
-                        Password.value = '';
                         $('.Error-1').hide();
                         $('.Error').hide();
+                        $('.name').html('');
+                        $('.surname').html('');
+                        $('.year').html('');
+                        $('.pay').html('');
+                        $('.overtime').html('');
+                        $('.TCno').html('');
+                        $('.error').hide();
+                        $('.container').hide();
+                        Username.value = '';
+                        Password.value = '';
+                        socket.emit('FIND', { username, password });
                     }
                 }
 
                 socket.on('FIND', veri => {
                     if(veri){
                         console.log(veri);
+                        $('.name').html(veri.name);
+                        $('.surname').html(veri.surname);
+                        $('.year').html(veri.year);
+                        $('.pay').html(veri.pay);
+                        $('.overtime').html(veri.overtime);
+                        $('.TCno').html(veri.TCno);
+                        $('.container').show();
+                        $('.error').hide();
                     }else{
-                        console.log('böyle bir kayıt yok!');
+                        $('.error').show();
                     }
                 });
             });
@@ -58,6 +88,35 @@
         <br />
         <div class="Error-1">Şifre girmediniz</div>
         <div class="Error">İsim girmediniz</div>
+        <div class="container">
+            <table class="table">
+                <tr>
+                    <td>İsim:      </td>
+                    <td class="name"></td>
+                </tr>
+                <tr>
+                    <td>Soyisim:      </td>
+                    <td class="surname"></td>
+                </tr>
+                <tr>
+                    <td>Yaş:      </td>
+                    <td class="year"></td>
+                </tr>
+                <tr>
+                    <td>Maaş:      </td>
+                    <td class="pay"></td>
+                </tr>
+                <tr>
+                    <td>Kaç gün çalışıyor:      </td>
+                    <td class="overtime"></td>
+                </tr>
+                <tr>
+                    <td>TCno:      </td>
+                    <td class="TCno"></td>
+                </tr>
+            </table>
+        </div>
+        <div class="error">Böyle bir kayıt yok.</div>
     </form>
 </body>
 </html>

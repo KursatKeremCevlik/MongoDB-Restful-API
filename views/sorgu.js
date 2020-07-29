@@ -14,24 +14,44 @@ $(() => {
         if(Username.value === ''){
             $('.Error').show();
             $('.Error-1').hide();
+            $('.error').hide();
+            $('.container').hide();
         }else{
             if(Password.value === ''){
                 $('.Error-1').show();
                 $('.Error').hide();
+                $('.error').hide();
+                $('.container').hide();
             }else{
-                socket.emit('FIND', { username, password });
-                Username.value = '';
-                Password.value = '';
                 $('.Error-1').hide();
                 $('.Error').hide();
+                $('.name').html('');
+                $('.surname').html('');
+                $('.year').html('');
+                $('.pay').html('');
+                $('.overtime').html('');
+                $('.TCno').html('');
+                $('.error').hide();
+                $('.container').hide();
+                Username.value = '';
+                Password.value = '';
+                socket.emit('FIND', { username, password });
             }
         }
 
         socket.on('FIND', veri => {
             if(veri){
                 console.log(veri);
+                $('.name').html(veri.name);
+                $('.surname').html(veri.surname);
+                $('.year').html(veri.year);
+                $('.pay').html(veri.pay);
+                $('.overtime').html(veri.overtime);
+                $('.TCno').html(veri.TCno);
+                $('.container').show();
+                $('.error').hide();
             }else{
-                console.log('böyle bir kayıt yok!');
+                $('.error').show();
             }
         });
     });
