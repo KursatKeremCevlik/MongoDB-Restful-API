@@ -1,0 +1,26 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    title Document
+    script(src='http://localhost:3000/socket.io/socket.io.js')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js')
+    style
+      include style.css
+    script
+      include sorgu.js
+  body
+    form#form_1
+      input#username(type='text')
+      |  Kullanıcı adınız ? 
+      br
+      input#password(type='password')
+      |  Şifreniz ? 
+      br
+      br
+      input(type='submit')
+      br
+      br
+      .Error-1 Şifre girmediniz
+      .Error İsim girmediniz

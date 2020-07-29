@@ -9,7 +9,7 @@ const BordroSchema = new Schema({
     year: Number,
     pay: Number,
     overtime: Number,
-    sicilNo: Number,
+    TCno: Number,
 });
 
 module.exports = mongoose.model('bordro', BordroSchema);

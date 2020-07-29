@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="http://localhost:3000/socket.io/socket.io.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        $(() => {
+            const socket = io.connect('http://localhost:3000');
+
+            const form_1 = document.getElementById('form_1');
+            const Username = document.getElementById('username');
+            const Password = document.getElementById('password');
+
+            form_1.addEventListener('submit', e => {
+                e.preventDefault()
+
+                const username = Username.value;
+                const password = Password.value;
+
+                if(Username.value === ''){
+                    $('.Error').show();
+                    $('.Error-1').hide();
+                }else{
+                    if(Password.value === ''){
+                        $('.Error-1').show();
+                        $('.Error').hide();
+                    }else{
+                        socket.emit('FIND', { username, password });
+                        Username.value = '';
+                        Password.value = '';
+                        $('.Error-1').hide();
+                        $('.Error').hide();
+                    }
+                }
+
+                socket.on('FIND', veri => {
+                    if(veri){
+                        console.log(veri);
+                    }else{
+                        console.log('böyle bir kayıt yok!');
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <form id="form_1">
+        <input type="text" id="username"> Kullanıcı adınız ? <br />
+        <input type="password" id="password"> Şifreniz ? <br />
+        <br />
+        <input type="submit">
+        <br />
+        <br />
+        <div class="Error-1">Şifre girmediniz</div>
+        <div class="Error">İsim girmediniz</div>
+    </form>
+</body>
+</html>

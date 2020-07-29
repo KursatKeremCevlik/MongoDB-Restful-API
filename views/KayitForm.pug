@@ -8,6 +8,8 @@ html(lang='en')
     script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js')
     style
       include style.css
+    script
+      include index.js
   body
     form(id='KayıtForm')
       input(type='text', id='İsim')
@@ -26,8 +28,8 @@ html(lang='en')
       input#Mesai(type='number')
       |  Kaç gün çalışıyorsun (ayda) 
       br
-      input#SicilNo(type='number')
-      |  Sicilno 
+      input#TCno(type='number')
+      |  T.C kimli numaranız 
       br
       br
       input#Username(type='text')
@@ -37,7 +39,7 @@ html(lang='en')
       |  Şifreniz 
       br
       br
-      input(type='submit', id='')
+      input(type='submit')
       br
       br
       .Surprise Kayıt olundu!

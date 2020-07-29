@@ -7,7 +7,7 @@ $(() => {
     const Yaş = document.getElementById('Yaş');
     const Maaş = document.getElementById('Maaş');
     const Mesai = document.getElementById('Mesai');
-    const SicilNo = document.getElementById('SicilNo');
+    const TCno = document.getElementById('TCno');
     //
     const Username = document.getElementById('Username');
     const Password = document.getElementById('Password');
@@ -31,7 +31,7 @@ $(() => {
         const yaş = Yaş.value;
         const maaş = Maaş.value;
         const mesai = Mesai.value;
-        const sicilNo = SicilNo.value;
+        const tcno = TCno.value;
         //
         const username = Username.value;
         const password = Password.value;
@@ -56,7 +56,7 @@ $(() => {
             invisible();
             $('#five').show();
             return false;
-        }else if(!SicilNo.value){
+        }else if(!TCno.value){
             invisible();
             $('#six').show();
             return false;
@@ -75,7 +75,7 @@ $(() => {
                 yaş,
                 maaş,
                 mesai,
-                sicilNo,
+                tcno,
                 username,
                 password
             });
@@ -85,7 +85,7 @@ $(() => {
             Yaş.value = '';
             Maaş.value = '';
             Mesai.value = '';
-            SicilNo.value = '';
+            TCno.value = '';
             Username.value = '';
             Password.value = '';
             $('.Surprise').show();
