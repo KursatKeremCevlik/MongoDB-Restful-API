@@ -1,7 +1,7 @@
 # MongoDB-Restful-API
 Bitti.
 
-Çalıştırmanız için gerekenler:
+Çalıştırmanız için gereken programlar:
   - Nodejs
   - npm
   -MongoDB
