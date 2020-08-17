@@ -4,7 +4,7 @@ Bitti.
 Çalıştırmanız için gereken programlar:
   - Nodejs
   - npm
-  -MongoDB
+  - MongoDB
   
 Yapmanız gerekenler:
   - Kendi klasörünüze bu repoyu klonlayın.
