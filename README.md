@@ -1,12 +1,11 @@
 # MongoDB-Restful-API
-Bitti.
+Done !
 
-Çalıştırmanız için gereken programlar:
+Required programs:
   - Nodejs
   - npm
   - MongoDB
   
-Yapmanız gerekenler:
-  - Kendi klasörünüze bu repoyu klonlayın.
-  - Sırasıyla 'npm install' ve 'npm start' komutlarını çalıştırın.
-  - Projeniz 'http://localhost:3000' adresinde hazır olucak.
+What to do:
+  - Write 'npm install' and 'npm start' to terminal
+  - And your project is available on 'http://localhost:3000'
